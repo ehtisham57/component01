@@ -14,24 +14,24 @@ const MyComponent = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsVisible(window.innerWidth >= 768);
+      setIsVisible(window.innerWidth >= 660);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isVisible]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: 3, // Number of slides to show in the slider
+    slidesToShow: 4, // Number of slides to show in the slider
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 768, // Breakpoint for small screens
+        breakpoint: 660, // Breakpoint for small screens
         settings: {
           slidesToShow: 1,
         },
@@ -101,7 +101,7 @@ const MyComponent = () => {
           </div>
 
         ):(
-            <div>
+            <div className='px-5'>
           <Slider {...settings}>
           <div className={`${styles.mainCard} col-lg-3 col-md-6 col-sm-12`}>
             <h3 className={`${styles.cardheading} text-9xl font-bold text-[#E50914] mb-4`}>'22</h3>
