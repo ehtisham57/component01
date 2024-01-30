@@ -29,6 +29,7 @@ const MyComponent = () => {
     speed: 1000,
     slidesToShow: 4, // Number of slides to show in the slider
     slidesToScroll: 1,
+    arrows:true,
     responsive: [
       {
         breakpoint: 660, // Breakpoint for small screens
